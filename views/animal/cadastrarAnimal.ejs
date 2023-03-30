@@ -1,0 +1,63 @@
+
+<!-- IMPORTAÇÃO DO PARTIAL HEADER -->
+<%- include('../partials/header.ejs') %>
+<body>
+    
+    <!-- <h1>TESTE FRONTEND EJS</h1> -->
+    <div class="container">
+        <%- include('../partials/menu.ejs') %>
+
+        <div class="card">
+
+            <div class="card-header">
+                <h3>Cadastrar Animal</h3>
+            </div>
+
+            <div class="card-body">
+
+                <form action="http://localhost:3000/cadastrarCategoria" 
+                method="post">
+
+                    <label for="nome_Animal"></label>
+                    <input class="form-control" type="text" 
+                    name="nome_Animal" id="nome_Animal"
+                    placeholder="Nome do Animal">
+
+                    <label for="identificacao_animal"></label>
+                    <input class="form-control" type="text" 
+                    name="identificacao_animal" id="identificacao_animal"
+                    placeholder="Identificação do Animal">
+
+                    <label for="sexo_animal"></label>
+                    <input class="form-control" type="text" 
+                    name="sexo_animal" id="sexo_animal"
+                    placeholder="Sexo">
+
+                    <label for="cor_animal"></label>
+                    <input class="form-control" type="text" 
+                    name="cor_animal" id="cor_animal"
+                    placeholder="Cor">
+
+                    <label for="dataNasc_animal"></label>
+                    <input class="form-control" type="text" 
+                    name="dataNasc_animal" id="dataNasc_animal"
+                    placeholder="Data de nascimento">
+
+                    
+
+
+                    <button class="btn btn-success mt-2">Cadastrar</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+</body>
+<!-- IMPORTAÇÃO DO PARTIAL FOOTER -->
+<%- include('../partials/footer.ejs') %>

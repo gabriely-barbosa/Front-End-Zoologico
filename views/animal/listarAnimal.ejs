@@ -1,0 +1,33 @@
+
+<!-- IMPORTAÇÃO DO PARTIAL HEADER -->
+<%- include('../partials/header.ejs') %>
+<body>
+    
+    <!-- <h1>TESTE FRONTEND EJS</h1> -->
+    <div class="container">
+        <%- include('../partials/menu.ejs') %>
+    </div>
+
+    <div class="card">
+        <div class="card-header">Listagem de Animais</div>
+    </div>
+
+    <% animais.data.forEach(animal => { %>
+    
+        <div class="card mt-2 p-1">
+            <div class="card-body">
+                <%= animal.nome_Animal %>
+            </div>
+
+            <div class="btn-group mr-2">
+                <button class="btn btn-warning">Editar</button>
+                <button class="btn btn-danger">Excluir</button>
+            </div>
+        </div>
+    <% }) %>
+    
+    
+
+</body>
+<!-- IMPORTAÇÃO DO PARTIAL FOOTER -->
+<%- include('../partials/footer.ejs') %>
