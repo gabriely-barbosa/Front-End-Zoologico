@@ -12,7 +12,7 @@
         <div class="card-header">Listagem de Animais</div>
     </div>
 
-    <% animais.data.forEach(animal => { %>
+    <% animais.data.forEach(animal=>{ %>
     
         <div class="card mt-2 p-1">
             <div class="card-body">
@@ -20,8 +20,8 @@
             </div>
 
             <div class="btn-group mr-2">
-                <button class="btn btn-warning">Editar</button>
-                <button class="btn btn-danger">Excluir</button>
+                <a href="/editarAnimal/<%= animal.cod_Animal %>" class="btn btn-warning">Editar</a>
+                <a href="/excluirAnimal/<%= animal.cod_Animal %>" class="btn btn-danger">Excluir</a>
             </div>
         </div>
     <% }) %>

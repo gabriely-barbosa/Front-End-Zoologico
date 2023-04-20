@@ -1,0 +1,65 @@
+<%- include('../partials/header.ejs') %>
+
+<body>
+
+    <div class="container">
+
+        <%- include('../partials/menu.ejs') %>
+
+        <div class="card">
+
+            <div class="card-header">
+                <h3>Editar Animal</h3>
+            </div>
+
+            <div class="card-body">
+
+                <form action="/editarAnimal" method="post">
+
+                    <input 
+                    type="hidden" 
+                    name="cod_Animal" 
+                    value="<%= animal.data.cod_Animal %>">
+
+                    <label for="nome_Animal"></label>
+                    <input 
+                    class="form-control" type="text" 
+                    name="nome_Animal" id="nome_Animal"
+                    value="<%= animal.data.nome_Animal %>">
+
+                    <label for="identificacao_animal"></label>
+                    <input class="form-control" type="text" 
+                    name="identificacao_animal" id="identificacao_animal"
+                    value="<%= animal.data.identificacao_animal %>">
+
+                    <label for="sexo_animal"></label>
+                    <input class="form-control" type="text" 
+                    name="sexo_animal" id="sexo_animal"
+                    value="<%= animal.data.sexo_animal %>">
+
+                    <label for="cor_animal"></label>
+                    <input class="form-control" type="text" 
+                    name="cor_animal" id="cor_animal"
+                    value="<%= animal.data.cor_animal %>">
+
+                    <label for="dataNasc_animal"></label>
+                    <input class="form-control" type="text" 
+                    name="dataNasc_animal" id="dataNasc_animal"
+                    value="<%= animal.data.dataNasc_animal %>">
+
+
+                    <button class="btn btn-success mt-2">Editar</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<%- include('../partials/footer.ejs') %>
+
+</html>

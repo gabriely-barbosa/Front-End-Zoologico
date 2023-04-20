@@ -32,6 +32,50 @@ app.get('/listarAnimal', (req, res) => {
         });
 });
 
+/* EDITAR */
+app.get('/editarAnimal/:cod_Animal', (req, res) => {
+    
+    let {cod_Animal} = req.params;
+
+    //res.send('teste');
+
+    const urlListarAnimal = `http://localhost:3000/listarAnimalID/${cod_Animal}`;
+
+     axios.get(urlListarAnimal)
+         .then((response) => {
+             let animal = response.data;
+             console.log(animal.data)
+             res.render('animal/editarAnimal', {animal});
+
+         });
+});
+
+app.post('/editarAnimal', (req, res) => {
+
+    let urlEditar = 'http://localhost:3000/alterarAnimal';
+
+    axios.put(urlEditar, req.body)
+        .then((response) => {
+            res.redirect('/listarAnimal');
+        });
+});
+
+app.get('/excluirAnimal/:cod_Animal', (req, res)=>{
+    console.log(req.params);
+ 
+     let {cod_Animal} = req.params;
+ 
+     const urlExcluirAnimal = `http://localhost:3000/excluirAnimal/${cod_Animal}`;
+ 
+     axios.delete(urlExcluirAnimal)
+     .then((response)=>{
+         res.redirect('/listarAnimal');
+     });
+     
+ });
+ 
+
+
 app.listen(3001, () => {
-    console.log("Servidor Front-End Rodando!")
+    console.log("Servidor Front-End Rodando! - http://localhost:3001")
 })
